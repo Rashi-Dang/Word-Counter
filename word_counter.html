@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Counter</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1 style="text-align: center; font-size:50px;">Word Counter</h1>
+
+    <div>
+    <textarea name="" id="words" cols="50" rows="10" placeholder="Write here..."></textarea> <br>
+    <p id="showdata"></p> 
+    <p id="show"></p>
+    <button onclick="countwords()">Count Here </button>    
+    </div>
+
+    <script>
+        function countwords(){
+        let num=document.getElementById('words').value.length;     // length se letters count honge
+        let word=document.getElementById('words').value;
+        word=word.match( /\w+/g  );          // w se first letter, + se 1 word, g se array create krega sab words ka 
+        word=word.length
+        console.log(word);
+
+        document.getElementById('showdata').innerHTML="The Total Characters are :"+ num;
+        document.getElementById('show').innerHTML="The Total Words are :"+ word;        
+        }
+    </script>
+</body>
+</html>
